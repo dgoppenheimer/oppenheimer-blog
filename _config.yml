@@ -13,7 +13,7 @@ baseurl: /oppenheimer-blog
 owner:
   name:           David G. Oppenheimer
   avatar:         avatar.jpg
-  bio:            "Associate Professor in the Dept. of Biology at the Univ. of Florida. Research interests: cytoskeleton organization and small molecule inhibitors of protein function."
+  bio:            "Associate Professor in the Dept. of Biology at the Univ. of Florida, studying cytoskeleton organization and small molecule inhibitors of protein function."
   email:          dg.oppenheimer@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        cell_biology

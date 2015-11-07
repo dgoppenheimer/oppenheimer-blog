@@ -200,7 +200,7 @@ $ git commit -m "a message about the post"
 $ git push origin gh-pages # check site at http://dgoppenheimer.github.io/oppenheimer-blog/
 ```
 
-*—and Bob's your uncle!*
+**—and Bob's your uncle!**
 
 
 

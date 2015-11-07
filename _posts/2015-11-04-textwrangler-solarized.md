@@ -61,7 +61,7 @@ Choose the new Solarized Dark theme from the Text Color preferences.
 
 Repeat the above steps for the Solarized Light theme.
 
-Here are Gists of the Solarized Light and Solarized Dark themes for Textwrangler 5. For Mac OSX 10.9 put these files in `~/Library/Application\ Support/TextWrangler/Color\ Schemes`, and restart Textwrangler.
+Here are Gists of the Solarized Light and Solarized Dark themes for Textwrangler 5. For Mac OSX 10.10 put these files in `~/Library/Application\ Support/TextWrangler/Color\ Schemes`, and restart Textwrangler.
 
 ## Solarized Light.bbcolors
 

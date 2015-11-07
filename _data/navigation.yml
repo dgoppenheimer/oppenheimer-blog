@@ -1,7 +1,9 @@
 # Menu navigation links
 
-- title: Theme Setup
-  url: /theme-setup/
+# - title: Theme Setup
+#  url: /theme-setup/
+# theme-setup is a folder in the root directory
+# it contains a file, index.md that has the info on theme setup
 
 - title: Undergrad in the Lab
   url: http://undergradinthelab.com

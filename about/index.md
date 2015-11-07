@@ -1,34 +1,14 @@
 ---
 layout: page
-title: About the Jekyll Theme
+title: About Cell Bones
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: actin-spheres-1136x640.jpg
+  credit: D.G. Oppenheimer
 comments: false
-modified: 2014-12-24
+modified: 2015-11-07
 ---
 
-They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
+The name of this blog reflects my interest in the cytoskeleton, which literally translates to "the cell's skeleton." However I will not restrict my ramblings to only the cytoskeleton. This blog will be a dumping ground for anything I happen to be thinking about. My latest interests include small molecule inhibitors of protein-protein interactions, endoplasmic reticulum localization signals, website development, and science communication.
 
-If you've used any of [my other themes](http://mademistakes.com/work/jekyll-themes/) most of this should be familiar territory...
+With respect to website development, I have used  [Drupal](https://www.drupal.org) for several projects. I like Drupal for all the usual reasons: it is powerful, there is a vibrant community, and it is free (as in free beer). My latest project is found at [Undergradinthelab.com](http://undergradinthelab.com). I also built an electronic lab notebook that our lab has been using for years. I also have (quite) limited experience with [WordPress](https://wordpress.com). For this blog, I wanted to learn something new, so I explored using [Jekyll](https://jekyllrb.com). I liked the speed of Jekyll sites and I found a bunch of attractive free themes on [http://jekyllthemes.org](http://jekyllthemes.org), so I decide to build this site using Jekyll. It is hosted on [GitHub](https://github.com) with [GitHub-Pages](https://pages.github.com). 
 
-## What HPSTR brings to the table:
-
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrads in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Modern and minimal design.
-* Sweet animated menu.
-* Background image support.
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Built-in support for Sass courtesy of Jekyll 2.x.
-* Optional [Disqus](http://disqus.com) comments.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page]({{ site.url }}/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting]({{ site.url }}/code-highlighting-post/) to make your code examples look snazzy.
-
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
-
-[^1]: Example: *domain.com/category-name/post-title*

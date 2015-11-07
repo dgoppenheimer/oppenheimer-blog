@@ -156,5 +156,51 @@ I finally got it to work. It helped to view page source in Safari and look at th
 
 When developing locally, change the `url` option to `http://localhost:4000` and use `bundle exec jekyll serve --baseurl ''`.
 
+## Customizing the Site ##
+
+### Header ###
+
+Add a bio to the `_config.yml` file.
+
+### Images ###
+
+Crop images to 1024 x 256 pixels
+
+## Deleting the Master Branch ##
+
+Since I was planning to keep the gh-pages and master branches in sync anyway, I thought I should just delete the master branch to keep things easier. I got these instructions from [Oli's blog](http://oli.jp/2011/github-pages-workflow/).
+
+Make sure that you are in the `oppenheimer-blog` directory and on the `gh-pages` branch.
+
+```console
+$ git status
+On branch gh-pages
+nothing to commit, working directory clean
+```
+
+Go to GitHub and change the default branch to `gh-pages` for the `oppenheimer-blog` repository. Click on the repository name, then _Settings_ > _Branches_. Change the default to the `gh-pages` branch and click _Update_.
+
+Delete the `master` branch on the remote (GitHub) and locally.
+
+```console
+$ cd ~/Sites/oppenheimer-blog
+$ git push origin :master
+$ git branch -d master
+```
+
+## Workflow
+
+Write a post using [Markdown](https://daringfireball.net/projects/markdown/). Name it according to [Jekyll](http://jekyllrb.com/docs/posts/) conventions and put it in the `_posts` directory. Then commit it locally and push it to GitHub.
+
+```console
+$ cd ~/Sites/oppenheimer-blog
+$ git status
+$ git add .
+$ git commit -m "a message about the post"
+$ git push origin gh-pages # check site at http://dgoppenheimer.github.io/oppenheimer-blog/
+```
+
+*—and Bob's your uncle!*
+
 
 

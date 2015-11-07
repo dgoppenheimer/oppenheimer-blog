@@ -1,7 +1,7 @@
-# Oppenheimer Blog
+# Cell Bones
 ### Science. Science. Science. Nerd.
 
-This is my first attempt at a blog. Do not expect much. The content will cover anything I feel like writing about.  
+This is my first attempt at a blog. Do not expect much. Here I will record my thoughts on a wide variety of topics, mostly science-related.  
 
 ---
 

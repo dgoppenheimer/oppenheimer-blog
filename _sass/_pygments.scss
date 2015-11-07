@@ -1,3 +1,16 @@
+table.highlighttable {
+  overflow-x:auto;
+  display:block;
+}
+
+table.highlighttable td.code {
+  width:100%;
+}
+
+pre code {
+  white-space: pre;
+}
+
 .highlight {
 	margin-bottom: 1.5em;
 	@include font(12);

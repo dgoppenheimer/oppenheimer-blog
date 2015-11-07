@@ -1,0 +1,160 @@
+---
+layout: post
+title: Building a Jekyll Blog
+tags: [Jekyll, code, HPSTR]
+image:
+  feature: jekyll-banner-image-1.jpg
+  credit: Tom Preston-Werner
+  creditlink: http://jekyllrb.com
+---
+
+My previous attempt at setting up a Jekyll blog was successful, but I did not like the theme I was using. This time I will try the [HPSTR theme](http://jekyllthemes.org/themes/hpstr/) by [Michael Rose](https://mademistakes.com). I have Jekyll installed already, but I think bundler will install it again. I have a GitHub account. I'll delete the previous repositories and start fresh. I am doing this on a MacBook Pro running Mac OSX 10.10.5.
+
+## Install Bundler ##
+
+{% highlight console %}
+$ cd ~
+$ sudo gem install bundler
+$ cd ~/Sites/oppenheimer-blog
+$ bundle install # I got errors
+{% endhighlight %}
+
+Create a file called `Gemfile` in the new repository.
+
+{% highlight console %}
+$ cd oppenheimer-blog
+$ nano Gemfile
+{% endhighlight %}
+
+Add the lines: 
+
+```
+gem 'github-pages'
+source 'https://rubygems.org'
+```
+
+Save and exit.
+
+Finish installation. _Note_: I had some errors installing nokogiri. After Googling around and trying a few things, I came upon [this solution on Stackoverflow](http://stackoverflow.com/questions/24091869/installing-nokogiri-on-osx-10-10-yosemite).
+
+{% highlight console %}
+$ sudo port selfupdate
+$ sudo port upgrade outdated # this took a long time
+$ sudo port install libiconv libxslt libxml2
+$ sudo gem install nokogiri -- --use-system-libraries --with-xml2-include=/usr/include/libxml2 --with-xml2-lib=/usr/lib/
+$ cd ~/Sites/oppenheimer-blog
+$ bundle install # Success!
+{% endhighlight %}
+
+## Install Octopress ##
+
+{% highlight console %}
+$ sudo gem install octopress --pre
+{% endhighlight %}
+
+Octopress 3 is due out soon, so I may wait before I dive into learning Octopress.
+
+## Fork a Theme ##
+
+I've decided to try the [HPSTR theme](http://jekyllthemes.org/themes/hpstr/) from [Michael Rose](https://mademistakes.com/work/jekyll-themes/).
+
+I [forked the theme](https://github.com/mmistakes/hpstr-jekyll-theme/fork) to my Git repository. I have previously set up ssh keys for authentication to GitHub.
+
+Clone the theme to my local repository.
+
+{% highlight console %}
+$ cd ~/Sites
+$ git clone git@github.com:dgoppenheimer/hpstr-jekyll-theme.git
+$ cd hpstr-jekyll-theme
+{% endhighlight %}
+
+Try the `bundle install` again in the `hpstr-jekyll-theme` directory.
+
+{% highlight console %}
+Bundle complete! 4 Gemfile dependencies, 38 gems now installed.
+Use bundle show [gemname] to see where a bundled gem is installed.
+{% endhighlight %}
+
+Rename the repository on GitHub. Go into the repo, and click `Settings`. Change the repo name to `oppenheimer-blog` and click `Rename`. Also update the existing local clone.
+
+{% highlight console %}
+$ git remote set-url origin git@github.com:dgoppenheimer/oppenheimer-blog.git
+{% endhighlight %}
+
+Rename the local directory.
+
+```console
+$ cd ../ # move out of the hpstr-jekyll-theme directory
+$ mv hpstr-jekyll-theme oppenheimer-blog
+$ cd oppenheimer-blog
+```
+
+Give it a whirl. _Note_: I changed a file in the images directory.
+
+```console
+$ git add .
+$ git commit -m "added my profile photo; changed avatar.jpg to avatar-orig.jpg"
+$ git push
+$ git checkout gh-pages
+$ git merge --no-ff master 
+$ # there were several conflicts
+$ git log
+$ git reset --hard 16638192f5
+$ git checkout master
+$ # delete local and remote gh-pages branches
+$ git branch -d gh-pages
+$ git push origin :gh-pages
+$ git checkout -b gh-pages # create new, fresh gh-pages branch
+$ git push origin gh-pages
+```
+
+Crank up the local server.
+
+```console
+$ # in the oppenheimer-blog directory, on the gh-pages branch
+$ bundle exec jekyll serve
+```
+
+Check `http://localhost:4000` for the site. **Success!**
+
+## Testing the Site on GitHub Pages ##
+
+The site should be visible at [http://dgoppenheimer.github.io/oppenheimer-blog/](http://dgoppenheimer.github.io/oppenheimer-blog/). However, it is lacking the css.
+
+Start by following the tips on [the Jekyll site](http://jekyllrb.com/docs/github-pages/). Start by looking at the `base url` option in `_config.yml`.  While I'm at it, I'll change a few of the other options like Site name, etc.
+
+In the `oppenheimer-blog` directory:
+
+```console
+$ git status
+$ git commit -am "changed _config.yml"
+$ git push origin gh-pages
+$ git checkout master
+$ git merge gh-pages
+$ git push origin master
+$ bundle exec jekyll serve --baseurl '' # to test locally
+```
+
+So the changes I made to `_config.yml` did not completely destroy the site. I can access it locally, and all the links work. Now I'll see if I can get it to work on GitHub Pages.
+
+Workflow:
+
+Make sure you are on the gh-pages branch.
+
+```console
+$ git branch
+gh-pages
+master
+$ # make changes to _config.yml
+$ git commit -am "made changes to _config.yml"
+$ git push origin gh-pages
+```
+
+Check site at http://dgoppenheimer.github.io/oppenheimer-blog/
+
+I finally got it to work. It helped to view page source in Safari and look at the path that was being used. Then I could go back to `_config.yml` and adjust the `url` option. I eventually used `url: http://dgoppenheimer.github.io/oppenheimer-blog` and `baseurl: /oppenheimer-blog`.
+
+When developing locally, change the `url` option to `http://localhost:4000` and use `bundle exec jekyll serve --baseurl ''`.
+
+
+

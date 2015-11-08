@@ -13,7 +13,12 @@ I have been using [Textwrangler](http://www.barebones.com/products/textwrangler/
 Here is how I got the Solarized themes working in Textwrangler 5.0: 
 
 Open Terminal (MacOSX)
-Download the [BBEdit Color Schemes Pack](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) from GitHub, and copy the `.bbcolors` files to the `~/Library/Application Support/TextWrangler/Color Schemes directory`:
+Download the [BBEdit Color Schemes Pack](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) from GitHub, and copy the `.bbcolors` files to the 
+
+{% highlight console %}
+~/Library/Application Support/TextWrangler/Color Schemes directory
+{% endhighlight %}
+
         
 {% highlight console %}
 $ git clone https://github.com/billkeller/BBEdit-Color-Schemes-Pack.git

@@ -28,11 +28,11 @@ In Textwrangler, select (cmd-click) both the `Solarized Dark.bbcolors` and the `
 
 Right-click (ctl-click) one of the selected files and select `Compare` from the menu. 
 
-```console
+{% highlight console %}
 $ git clone https://github.com/billkeller/BBEdit-Color-Schemes-Pack.git
 $ cd BBEdit-Color-Schemes-Pack
 $ cp *.bbcolors ~/Library/Application\ Support/TextWrangler/Color\ Schemes/
-```
+{% endhighlight %}
         
 For each of `<key>` values in the `Tomorrow-copy.bbcolors` file, replace the `<string>` values with the corresponding `<string>` values from the `Solarized Dark.bbcolors` file.         
 Some of the `<key>` values in the `Solarized Dark.bbcolors` file are different than the values in the `Tomorrow-copy.bbcolors` file, and may be the source of the problem. Do not copy those `<key>` values to the `Tomorrow-copy.bbcolors` file. For example, in the `Solarized Dark.bbcolors` file we find:

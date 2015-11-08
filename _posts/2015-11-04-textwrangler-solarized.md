@@ -13,10 +13,10 @@ I have been using [Textwrangler](http://www.barebones.com/products/textwrangler/
 Here is how I got the Solarized themes working in Textwrangler 5.0: 
 
 Open Terminal (MacOSX)
-Download the [BBEdit Color Schemes Pack](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) from GitHub, and copy the `.bbcolors` files to the 
+Download the [BBEdit Color Schemes Pack](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) from GitHub, and copy the `.bbcolors` files to the directory:
 
 {% highlight console %}
-~/Library/Application Support/TextWrangler/Color Schemes directory
+~/Library/Application Support/TextWrangler/Color Schemes
 {% endhighlight %}
 
         
@@ -66,7 +66,13 @@ Choose the new Solarized Dark theme from the Text Color preferences.
 
 Repeat the above steps for the Solarized Light theme.
 
-Here are Gists of the Solarized Light and Solarized Dark themes for Textwrangler 5. For Mac OSX 10.10 put these files in `~/Library/Application\ Support/TextWrangler/Color\ Schemes`, and restart Textwrangler.
+Here are Gists of the Solarized Light and Solarized Dark themes for Textwrangler 5. For Mac OSX 10.10 put these files in 
+
+{% highlight html %}
+~/Library/Application\ Support/TextWrangler/Color\ Schemes
+{% endhighlight %}
+
+and restart Textwrangler.
 
 ## Solarized Light.bbcolors
 

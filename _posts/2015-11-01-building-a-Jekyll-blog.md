@@ -211,18 +211,10 @@ I added these lines as well.
 
 ```js
 var disqus_identifier = "{{ site.disqus_shortname }}{{ page.url | replace:'index.html','' }}";
-var disqus_identifier = '{{ site.baseurl }}/{{ page.title | slugify }}';
 var disqus_url = '{{ site.url }}{{ page.url }}';
-var disqus_title = '{{ page.title | slugify }}';
+var disqus_title = '\{\{ page.title | slugify \}\}';
 ```
-
-
-
-
-
-
-
-At the bottom of the post, put the [universal embed code](http://docs.disqus.com/developers/universal/) between `% if page.comments %` and `% endif %` tags. 
+ 
 
 ## Workflow
 

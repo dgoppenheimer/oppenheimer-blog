@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using the Solarized themes in Textwrangler 5
+description: "How to get the Solarized themes to work with Textwrangler 5"
 tags: [Textwrangler, code, highlighting, Solarized]
 image:
   feature: textwrangler-solarized.jpg

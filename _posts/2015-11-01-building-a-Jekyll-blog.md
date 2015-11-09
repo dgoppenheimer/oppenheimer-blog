@@ -178,7 +178,7 @@ Change `{{"{{ post.content "}}}}` to `{{"{{ post.excerpt "}}}}` in `index.html` 
 <p><a class="btn" href="{{"{{ post.url "}}}}">Continue Reading</a></p>
 ```
 
-The above code places a "Continue Reading" button right below the excerpt.
+The above code places a "Continue Reading" button right below the excerpt. I got this code from the post, [Customise HPSTR Jekyll Theme](http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#postpreview), on the [lsfalimis](http://lsfalimis.github.io) blog. Also in this post I learned how to escape the liquid tags in code blocks. 
 
 Add `excerpt:` to the YAML front matter for each post and write a unique excerpt for each post. Do not use Markdown when writing the excerpt in the front matter. 
 

@@ -170,6 +170,12 @@ Add a bio to the `_config.yml` file.
 
 Crop images to 1024 x 256 pixels
 
+### Excerpts
+
+Change `{{ post.content }}` to `{{ post.excerpt }}` in `post-index.html`.
+
+Add `excerpt:` to the YAML front matter for each post and write a unique excerpt for each post.
+
 ## Deleting the Master Branch ##
 
 Since I was planning to keep the gh-pages and master branches in sync anyway, I thought I should just delete the master branch to keep things easier. I got these instructions from [Oli's blog](http://oli.jp/2011/github-pages-workflow/).

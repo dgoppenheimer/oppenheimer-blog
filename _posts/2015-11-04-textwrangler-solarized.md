@@ -7,6 +7,7 @@ image:
   feature: textwrangler-solarized.jpg
   credit: Textwrangler and Solarized
 comments: true
+excerpt: I like using Textwrangler as my go-to text editor, but I wanted to use the low contrast Solarized themes. When I upgraded to Textwrangler 5, the Solarized themes no longer worked. Here is how I solved the problem. 
 ---
 I have been using [Textwrangler](http://www.barebones.com/products/textwrangler/) for years as my go-to text editor. I also used [Atom](https://atom.io) for a while and learned that I appreciate the finer things like syntax highlighting and the lower contrast themes that help reduce eyestrain. There are certain features of Textwrangler that I like, so I decided to stick with it as my primary text editor, but customize it a bit by installing one of the low contrast themes.
 

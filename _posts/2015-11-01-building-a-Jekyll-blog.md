@@ -172,7 +172,13 @@ Crop images to 1024 x 256 pixels
 
 ### Excerpts
 
-Change `{{ post.content }}` to `{{ post.excerpt }}` in `index.html` in your site's root directory.
+Change `{{"{{ post.content "}}}}` to `{{"{{ post.excerpt "}}}}` in `index.html` in your site's root directory. Right below `{{"{{ post.excerpt "}}}}`, paste 
+
+```html
+<p><a class="btn" href="{{"{{ post.url "}}}}">Continue Reading</a></p>
+```
+
+The above code places a "Continue Reading" button right below the excerpt.
 
 Add `excerpt:` to the YAML front matter for each post and write a unique excerpt for each post. Do not use Markdown when writing the excerpt in the front matter. 
 
@@ -217,10 +223,9 @@ Modify the `disqus_comments.html` file in the `_includes` directory. Replace the
 I added these lines as well.
 
 {% highlight js %}
-// I had to escape the curly brackets \{
-var disqus_identifier = "\{\{ site.disqus_shortname \}\}\{\{ page.url | replace:'index.html','' \}\}";
-var disqus_url = '\{\{ site.url \}\}\{\{ page.url \}\}';
-var disqus_title = '\{\{ page.title | slugify \}\}';
+var disqus_identifier = "{{"{{ site.disqus_shortname "}}}}{{"{{ page.url | replace:'index.html','' "}}}}";
+var disqus_url = '{{"{{ site.url "}}}}{{"{{ page.url "}}}}';
+var disqus_title = '{{"{{ page.title | slugify "}}}}';
 {% endhighlight %}
  
 

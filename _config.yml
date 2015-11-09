@@ -1,6 +1,6 @@
 title:            Cell Bones
 description:      Science. Science. Science. Nerd.
-disqus_shortname: oppie
+disqus_shortname: cellbones
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
@@ -36,7 +36,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "D. G. Oppenheimer"
+      author: "D.G. Oppenheimer"
 
 # Background image to be tiled on all pages
 background: 
@@ -62,8 +62,8 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+# http://jekyllrb.com/docs/permalinks/
+permalink:   pretty
 
 # Amount of post to show on home page
 paginate: 5

@@ -2,10 +2,13 @@
 layout: post
 title: Building a Jekyll Blog
 tags: [Jekyll, code, HPSTR]
+description: "Building a blog using Jekyll and hosting it on GitHub-Pages"
 image:
   feature: jekyll-banner-image-1.jpg
   credit: Tom Preston-Werner
   creditlink: http://jekyllrb.com
+modified: 2015-11-08
+comments: true
 ---
 
 My previous attempt at setting up a Jekyll blog was successful, but I did not like the theme I was using. This time I will try the [HPSTR theme](http://jekyllthemes.org/themes/hpstr/) by [Michael Rose](https://mademistakes.com). I have Jekyll installed already, but I think bundler will install it again. I have a GitHub account. I'll delete the previous repositories and start fresh. I am doing this on a MacBook Pro running Mac OSX 10.10.5.
@@ -188,6 +191,39 @@ $ git push origin :master
 $ git branch -d master
 ```
 
+## Enabling Disqus Comments
+
+Follow the instructions from the accepted answer to this question on [Stackoverflow](http://stackoverflow.com/questions/21446165/how-do-i-use-disqus-comments-in-github-pages-blog-markdown). The instructions from Disqus are [here](https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions).
+
+Briefly:
+
+Register on [Disqus](https://disqus.com). 
+
+Add `comments: true` to the [YAML](http://jekyllrb.com/docs/frontmatter/) front matter.
+
+Modify the `disqus_comments.html` file in the `_includes` directory. Replace the example `site.disqus_shortname` with the disqus shortname you received when you registered your site. I also added this line so I could test the site locally:
+
+```js
+// var disqus_developer = 1; // Comment out before you push to gh-pages
+```
+
+I added these lines as well.
+
+```js
+var disqus_identifier = "{{ site.disqus_shortname }}{{ page.url | replace:'index.html','' }}";
+var disqus_identifier = '{{ site.baseurl }}/{{ page.title | slugify }}';
+var disqus_url = '{{ site.url }}{{ page.url }}';
+var disqus_title = '{{ page.title | slugify }}';
+```
+
+
+
+
+
+
+
+At the bottom of the post, put the [universal embed code](http://docs.disqus.com/developers/universal/) between `% if page.comments %` and `% endif %` tags. 
+
 ## Workflow
 
 Write a post using [Markdown](https://daringfireball.net/projects/markdown/). Name it according to [Jekyll](http://jekyllrb.com/docs/posts/) conventions and put it in the `_posts` directory. Then commit it locally and push it to GitHub.
@@ -201,6 +237,4 @@ $ git push origin gh-pages # check site at http://dgoppenheimer.github.io/oppenh
 ```
 
 **—and Bob's your uncle!**
-
-
 

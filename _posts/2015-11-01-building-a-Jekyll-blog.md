@@ -9,6 +9,7 @@ image:
   creditlink: http://jekyllrb.com
 modified: 2015-11-08
 comments: true
+excerpt: Here I describe my use of Jekyll to build a personal blog. I begin by forking a theme on github and adding some content. After looking at countless Jekyll site demos, the theme I ultimately chose was the HPSTR theme crafted by Michael Rose.
 ---
 
 My previous attempt at setting up a Jekyll blog was successful, but I did not like the theme I was using. This time I will try the [HPSTR theme](http://jekyllthemes.org/themes/hpstr/) by [Michael Rose](https://mademistakes.com). I have Jekyll installed already, but I think bundler will install it again. I have a GitHub account. I'll delete the previous repositories and start fresh. I am doing this on a MacBook Pro running Mac OSX 10.10.5.

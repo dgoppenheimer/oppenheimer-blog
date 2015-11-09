@@ -172,9 +172,9 @@ Crop images to 1024 x 256 pixels
 
 ### Excerpts
 
-Change `{{ post.content }}` to `{{ post.excerpt }}` in `post-index.html`.
+Change `{{ post.content }}` to `{{ post.excerpt }}` in `index.html` in your site's root directory.
 
-Add `excerpt:` to the YAML front matter for each post and write a unique excerpt for each post.
+Add `excerpt:` to the YAML front matter for each post and write a unique excerpt for each post. Do not use Markdown when writing the excerpt in the front matter. 
 
 ## Deleting the Master Branch ##
 

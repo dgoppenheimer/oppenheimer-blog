@@ -210,8 +210,8 @@ Modify the `disqus_comments.html` file in the `_includes` directory. Replace the
 I added these lines as well.
 
 {% highlight js %}
-var disqus_identifier = "{{ site.disqus_shortname }}{{ page.url | replace:'index.html','' }}";
-var disqus_url = '{{ site.url }}{{ page.url }}';
+var disqus_identifier = "\{\{ site.disqus_shortname \}\}\{\{ page.url | replace:'index.html','' \}\}";
+var disqus_url = '\{\{ site.url \}\}\{\{ page.url \}\}';
 var disqus_title = '\{\{ page.title | slugify \}\}';
 {% endhighlight %}
  

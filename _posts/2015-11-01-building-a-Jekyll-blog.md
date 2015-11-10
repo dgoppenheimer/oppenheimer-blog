@@ -175,7 +175,7 @@ Crop images to 1024 x 256 pixels
 Change `{{"{{ post.content "}}}}` to `{{"{{ post.excerpt "}}}}` in `index.html` in your site's root directory. Right below `{{"{{ post.excerpt "}}}}`, paste 
 
 ```html
-<p><a class="btn" href="{{"{{ post.url "}}}}">Continue Reading</a></p>
+<p><a class="btn" href="{{"{{ site.url "}}}}{{"{{ post.url "}}}}">Continue Reading</a></p>
 ```
 
 The above code places a "Continue Reading" button right below the excerpt. I got this code from the post, [Customise HPSTR Jekyll Theme](http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#postpreview), on the [lsfalimis](http://lsfalimis.github.io) blog. Also in this post I learned how to escape the liquid tags in code blocks. 

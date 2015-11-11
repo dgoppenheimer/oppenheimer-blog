@@ -7,7 +7,7 @@ image:
   feature: jekyll-banner-image-1.jpg
   credit: Tom Preston-Werner
   creditlink: http://jekyllrb.com
-modified: 2015-11-08
+modified: 2015-11-10
 comments: true
 excerpt: Here I describe my use of Jekyll to build a personal blog. I begin by forking a theme on github and adding some content. After looking at countless Jekyll site demos, the theme I ultimately chose was the HPSTR theme crafted by Michael Rose.
 ---
@@ -170,7 +170,7 @@ Add a bio to the `_config.yml` file.
 
 Crop images to 1024 x 256 pixels
 
-### Excerpts
+### Excerpts ###
 
 Change `{{"{{ post.content "}}}}` to `{{"{{ post.excerpt "}}}}` in `index.html` in your site's root directory. Right below `{{"{{ post.excerpt "}}}}`, paste 
 
@@ -204,7 +204,7 @@ $ git push origin :master
 $ git branch -d master
 ```
 
-## Enabling Disqus Comments
+## Enabling Disqus Comments ##
 
 Follow the instructions from the accepted answer to this question on [Stackoverflow](http://stackoverflow.com/questions/21446165/how-do-i-use-disqus-comments-in-github-pages-blog-markdown). The instructions from Disqus are [here](https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions).
 
@@ -228,8 +228,11 @@ var disqus_url = '{{"{{ site.url "}}}}{{"{{ page.url "}}}}';
 var disqus_title = '{{"{{ page.title | slugify "}}}}';
 {% endhighlight %}
  
+## Enabling Google Analytics ##
 
-## Workflow
+Wow. This theme is so well-designed that all you have to do to enable Google Analytics is to place your Tracking ID in the appropriate place in the `_config.yml` file. Neat.
+
+## Workflow ##
 
 Write a post using [Markdown](https://daringfireball.net/projects/markdown/). Name it according to [Jekyll](http://jekyllrb.com/docs/posts/) conventions and put it in the `_posts` directory. Then commit it locally and push it to GitHub.
 

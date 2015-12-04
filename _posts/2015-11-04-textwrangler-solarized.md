@@ -11,7 +11,7 @@ excerpt: I like using Textwrangler as my go-to text editor, but I wanted to use 
 ---
 I have been using [Textwrangler](http://www.barebones.com/products/textwrangler/) for years as my go-to text editor. I also used [Atom](https://atom.io) for a while and learned that I appreciate the finer things like syntax highlighting and the lower contrast themes that help reduce eyestrain. There are certain features of Textwrangler that I like, so I decided to stick with it as my primary text editor, but customize it a bit by installing one of the low contrast themes.
 
-[Solarized](http://ethanschoonover.com/solarized) is a carefully chosen color scheme designed to reduce eyestrain when editing text. It has been ported to most of the text editors that are popular among coders, including Textwrangler. I recently updated to Textwrangler 5.0, and the Solarized files I downloaded from [GitHub](https://github.com/rcarmo/textwrangler-bbedit-solarized) would not work. However, [other theme files](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) worked fine. I compared the files that worked with the ones that did not, and eventually got the Solarized themes to work. I thought I would post my solution here in case anybody else had this problem. *Disclaimer:* I am not a coder, just a dabbler. I'm sure anyone with a little experience would have identified the problem and fixed it much faster and easier than I did.
+[Solarized](http://ethanschoonover.com/solarized) is a carefully chosen color scheme designed to reduce eyestrain when editing text. It has been ported to most of the text editors that are popular among coders, including Textwrangler. I recently updated to Textwrangler 5.0, and the Solarized files I downloaded from [GitHub](https://github.com/rcarmo/textwrangler-bbedit-solarized) would not work. However, [other theme files](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) worked fine. I compared the files that worked with the ones that did not, and eventually got the Solarized themes to work. I thought I would post my solution here in case anybody else had this problem. _Disclaimer:_ I am not a coder, just a dabbler. I'm sure anyone with a little experience would have identified the problem and fixed it much faster and easier than I did.
 
 Here is how I got the Solarized themes working in Textwrangler 5.0: 
 
@@ -87,7 +87,42 @@ and restart Textwrangler.
 
 ### Happy coding!
 
+## Update
 
+I noticed after a while that the text color in the Solarized Light theme was a bit darker that that suggested on the [Solarized web site](http://ethanschoonover.com/solarized). I changed the text color for the Textwrangler Solarized Light theme by replacing these lines in the `Solarized Light.bbcolors` file: 
+
+```
+<key>ForegroundColor</key>
+<string>rgba(0.015930,0.126528,0.159701,1.0)</string>
+```
+
+with these lines:
+
+```
+<key>ForegroundColor</key>
+<string>rgba(0.396078,0.482353,0.513725,1.0)</string>
+```
+
+Save the file, then remove the `Solarized Light.bbColorScheme` file from the directory,
+
+{% highlight html %}
+~/Library/Application\ Support/TextWrangler/Color\ Schemes
+{% endhighlight %}
+
+and restart Textwrangler. 
+
+To determine the `rgba` values, first find the `RGB` values for the Solarized color you want from the _Values_ section on the [Solarized web site](http://ethanschoonover.com/solarized). I wanted the `base00` color for the body text (see the _Usage & Development_ section):  
+
+```
+SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
+--------- ------- ---- -------  ----------- ---------- ----------- -----------
+base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
+```
+Next, divide each of the `RGB` values by 255 to determine the number to use as the `rgba` value. Hence, 101/255 = 0.396078, 123/255 = 0.482353, and 131/255 = 0.513725. Using this method, you can convert the text color to anything you want. 
+
+I have updated the `Solarized Light.bbcolors` Gist to reflect the new text color. 
+
+### Cheers!
 
 
 

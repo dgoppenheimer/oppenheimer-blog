@@ -90,7 +90,7 @@ and restart Textwrangler.
 
 ## Update December 4, 2015
 
-I noticed after a while that the text color in the Solarized Light theme was a bit darker that that suggested on the [Solarized web site](http://ethanschoonover.com/solarized). I changed the text color for the Textwrangler Solarized Light theme by replacing these lines in the `Solarized Light.bbcolors` file: 
+I noticed that the text color in the Solarized Light theme was a bit darker that that suggested on the [Solarized web site](http://ethanschoonover.com/solarized). I changed the text color for the Textwrangler Solarized Light theme by replacing these lines in the `Solarized Light.bbcolors` file: 
 
 ```
 <key>ForegroundColor</key>

@@ -66,4 +66,6 @@ First, I uncommented the line `set ray_opaque_background, 0` and ran the script 
 <b id="f1">1</b> The cholesterol to phospholipid ratio for the ER membrane is 0.15. For a membrane with 256 phospholipid molecules, one needs 256 x 0.15 = 38.4 cholesterol molecules, or 19 for the upper and lower leaflets. I know that each leaflet can have a different lipid composition, but since I don't have that information handy, I'll make the membrane symmetrical. I chose 256 for the number of phospholipids because it gives a membrane patch of a nice size. [↩](#a1)
 
 
+## pymol-ER-membrane.txt
+
 {% gist 16a4f49306f927ac7dfb %}

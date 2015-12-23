@@ -61,6 +61,11 @@ Note that the lighting settings to get a nice ray traced image produces a washed
 
 First, I uncommented the line `set ray_opaque_background, 0` and ran the script again. This produces an image that has a transparent background. Then I imported the image into [Affinity Designer](https://affinity.serif.com/en-us/) and added a drop shadow and changed the background gradient to diagonal. Next, I exported it as a `.jpg` file.
 
+## Final Thoughts
+
+Now that I have a membrane `.pdb` file, I can illustrate almost anything I want about membrane structure. I can color the membranes by hydrophobicity, label all the polar head groups, or show only specific lipids. I can zoom in and show packing of saturated vs unsaturated fatty acid tails, and I can show how sterols fit into the membrane. Pymol makes it easy to generate movies, if I want to go that far. Finally, I can always return to CHARM-GUI and build another membrane if I want to show membranes of other lipid composition. 
+
+
 
 ---
 <b id="f1">1</b> The cholesterol to phospholipid ratio for the ER membrane is 0.15. For a membrane with 256 phospholipid molecules, one needs 256 x 0.15 = 38.4 cholesterol molecules, or 19 for the upper and lower leaflets. I know that each leaflet can have a different lipid composition, but since I don't have that information handy, I'll make the membrane symmetrical. I chose 256 for the number of phospholipids because it gives a membrane patch of a nice size. [↩](#a1)

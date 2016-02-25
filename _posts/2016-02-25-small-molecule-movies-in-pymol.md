@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Small Molecule Movies in PyMol
-description: "How to make simple movies of small molecules using PyMol and ffmpeg"
+description: "How to make simple movies of small molecules using PyMol and FFmpeg"
 modified: 
 tags: [PyMol, code, molecules, ffmpeg, mp4]
 image:

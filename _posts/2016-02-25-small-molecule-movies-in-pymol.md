@@ -5,7 +5,7 @@ description: "How to make simple movies of small molecules using PyMol and FFmpe
 modified: 
 tags: [PyMol, code, molecules, ffmpeg, mp4]
 image:
-  feature: test.jpg
+  feature: oxytocin.jpg
   credit: D. G. Oppenheimer
 comments: false
 excerpt: Molecules are inherently three dimensional and 2D representations do not often adequately show the arrangement of atoms, especially for "larger" small molecules. To better show the structure, I made a simple movie where the small molecule rotates around the Y-axis. Here's how I did it. 

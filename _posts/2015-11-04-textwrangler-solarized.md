@@ -19,16 +19,16 @@ Here is how I got the Solarized themes working in Textwrangler 5.0:
 Open Terminal (MacOSX)
 Download the [BBEdit Color Schemes Pack](https://github.com/billkeller/BBEdit-Color-Schemes-Pack) from GitHub, and copy the `.bbcolors` files to the directory:
 
-{% highlight console %}
+```bash
 ~/Library/Application Support/TextWrangler/Color Schemes
-{% endhighlight %}
+```
 
         
-{% highlight console %}
+```bash
 $ git clone https://github.com/billkeller/BBEdit-Color-Schemes-Pack.git
 $ cd BBEdit-Color-Schemes-Pack
 $ cp *.bbcolors ~/Library/Application\ Support/TextWrangler/Color\ Schemes/
-{% endhighlight %}
+```
         
 Open `Solarized Dark.bbcolors`, and `Tomorrow.bbcolors` in Textwrangler. 
 
@@ -37,26 +37,26 @@ In Textwrangler, select (cmd-click) both the `Solarized Dark.bbcolors` and the `
 
 Right-click (ctl-click) one of the selected files and select `Compare` from the menu. 
 
-{% highlight console %}
+```bash
 $ git clone https://github.com/billkeller/BBEdit-Color-Schemes-Pack.git
 $ cd BBEdit-Color-Schemes-Pack
 $ cp *.bbcolors ~/Library/Application\ Support/TextWrangler/Color\ Schemes/
-{% endhighlight %}
+```
         
 For each of `<key>` values in the `Tomorrow-copy.bbcolors` file, replace the `<string>` values with the corresponding `<string>` values from the `Solarized Dark.bbcolors` file.         
 Some of the `<key>` values in the `Solarized Dark.bbcolors` file are different than the values in the `Tomorrow-copy.bbcolors` file, and may be the source of the problem. Do not copy those `<key>` values to the `Tomorrow-copy.bbcolors` file. For example, in the `Solarized Dark.bbcolors` file we find:
     
-{% highlight html %}
+```html
 <key>Color:UseCustomHighlight</key>
 <string>1</string>
-{% endhighlight %}
+```
 	
 But in the `Tomorrow-copy.bbcolors` file we find:
 	
-{% highlight html %}
+```html
 <key>UseCustomHighlightColor</key>
 <false/>
-{% endhighlight %}
+```
     
 Instead, use `<key>UseCustomHighlightColor</key>` but change `<false/>` to `<true/>`.
     
@@ -72,9 +72,9 @@ Repeat the above steps for the Solarized Light theme.
 
 Here are Gists of the Solarized Light and Solarized Dark themes for Textwrangler 5. For Mac OSX 10.10 put these files in 
 
-{% highlight html %}
+```html
 ~/Library/Application\ Support/TextWrangler/Color\ Schemes
-{% endhighlight %}
+```
 
 and restart Textwrangler.
 
@@ -106,9 +106,9 @@ with these lines:
 
 Save the file, then remove the `Solarized Light.bbColorScheme` file from the directory,
 
-{% highlight html %}
+```html
 ~/Library/Application\ Support/TextWrangler/Color\ Schemes
-{% endhighlight %}
+```
 
 and restart Textwrangler. 
 

@@ -16,19 +16,19 @@ My previous attempt at setting up a Jekyll blog was successful, but I did not li
 
 ## Install Bundler ##
 
-{% highlight console %}
+```bash
 $ cd ~
 $ sudo gem install bundler
 $ cd ~/Sites/oppenheimer-blog
 $ bundle install # I got errors
-{% endhighlight %}
+```
 
 Create a file called `Gemfile` in the new repository.
 
-{% highlight console %}
+```bash
 $ cd oppenheimer-blog
 $ nano Gemfile
-{% endhighlight %}
+```
 
 Add the lines: 
 
@@ -41,20 +41,20 @@ Save and exit.
 
 Finish installation. _Note_: I had some errors installing nokogiri. After Googling around and trying a few things, I came upon [this solution on Stackoverflow](http://stackoverflow.com/questions/24091869/installing-nokogiri-on-osx-10-10-yosemite).
 
-{% highlight console %}
+```bash
 $ sudo port selfupdate
 $ sudo port upgrade outdated # this took a long time
 $ sudo port install libiconv libxslt libxml2
 $ sudo gem install nokogiri -- --use-system-libraries --with-xml2-include=/usr/include/libxml2 --with-xml2-lib=/usr/lib/
 $ cd ~/Sites/oppenheimer-blog
 $ bundle install # Success!
-{% endhighlight %}
+```
 
 ## Install Octopress ##
 
-{% highlight console %}
+```bash
 $ sudo gem install octopress --pre
-{% endhighlight %}
+```
 
 Octopress 3 is due out soon, so I may wait before I dive into learning Octopress.
 
@@ -66,28 +66,28 @@ I [forked the theme](https://github.com/mmistakes/hpstr-jekyll-theme/fork) to my
 
 Clone the theme to my local repository.
 
-{% highlight console %}
+```bash
 $ cd ~/Sites
 $ git clone git@github.com:dgoppenheimer/hpstr-jekyll-theme.git
 $ cd hpstr-jekyll-theme
-{% endhighlight %}
+```
 
 Try the `bundle install` again in the `hpstr-jekyll-theme` directory.
 
-{% highlight console %}
+```bash
 Bundle complete! 4 Gemfile dependencies, 38 gems now installed.
 Use bundle show [gemname] to see where a bundled gem is installed.
-{% endhighlight %}
+```
 
 Rename the repository on GitHub. Go into the repo, and click `Settings`. Change the repo name to `oppenheimer-blog` and click `Rename`. Also update the existing local clone.
 
-{% highlight console %}
+```bash
 $ git remote set-url origin git@github.com:dgoppenheimer/oppenheimer-blog.git
-{% endhighlight %}
+```
 
 Rename the local directory.
 
-```console
+```bash
 $ cd ../ # move out of the hpstr-jekyll-theme directory
 $ mv hpstr-jekyll-theme oppenheimer-blog
 $ cd oppenheimer-blog
@@ -95,7 +95,7 @@ $ cd oppenheimer-blog
 
 Give it a whirl. _Note_: I changed a file in the images directory.
 
-```console
+```bash
 $ git add .
 $ git commit -m "added my profile photo; changed avatar.jpg to avatar-orig.jpg"
 $ git push
@@ -114,7 +114,7 @@ $ git push origin gh-pages
 
 Crank up the local server.
 
-```console
+```bash
 $ # in the oppenheimer-blog directory, on the gh-pages branch
 $ bundle exec jekyll serve
 ```
@@ -129,7 +129,7 @@ Start by following the tips on [the Jekyll site](http://jekyllrb.com/docs/github
 
 In the `oppenheimer-blog` directory:
 
-```console
+```bash
 $ git status
 $ git commit -am "changed _config.yml"
 $ git push origin gh-pages
@@ -145,7 +145,7 @@ Workflow:
 
 Make sure you are on the gh-pages branch.
 
-```console
+```bash
 $ git branch
 gh-pages
 master
@@ -188,7 +188,7 @@ Since I was planning to keep the gh-pages and master branches in sync anyway, I 
 
 Make sure that you are in the `oppenheimer-blog` directory and on the `gh-pages` branch.
 
-```console
+```bash
 $ git status
 On branch gh-pages
 nothing to commit, working directory clean
@@ -198,7 +198,7 @@ Go to GitHub and change the default branch to `gh-pages` for the `oppenheimer-bl
 
 Delete the `master` branch on the remote (GitHub) and locally.
 
-```console
+```bash
 $ cd ~/Sites/oppenheimer-blog
 $ git push origin :master
 $ git branch -d master
@@ -222,11 +222,11 @@ Modify the `disqus_comments.html` file in the `_includes` directory. Replace the
 
 I added these lines as well.
 
-{% highlight js %}
+```js
 var disqus_identifier = "{{"{{ site.disqus_shortname "}}}}{{"{{ page.url | replace:'index.html','' "}}}}";
 var disqus_url = '{{"{{ site.url "}}}}{{"{{ page.url "}}}}';
 var disqus_title = '{{"{{ page.title | slugify "}}}}';
-{% endhighlight %}
+```
  
 ## Enabling Google Analytics ##
 
@@ -236,7 +236,7 @@ Wow. This theme is so well-designed that all you have to do to enable Google Ana
 
 Write a post using [Markdown](https://daringfireball.net/projects/markdown/). Name it according to [Jekyll](http://jekyllrb.com/docs/posts/) conventions and put it in the `_posts` directory. Then commit it locally and push it to GitHub.
 
-```console
+```bash
 $ cd ~/Sites/oppenheimer-blog
 $ git status
 $ git add .

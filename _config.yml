@@ -63,6 +63,8 @@ excerpt_separator: <!--more-->
 
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
 sass:
   sass_dir: _sass
   style: compressed

@@ -5,8 +5,8 @@ reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-#url: http://localhost:4000
-url: http://dgoppenheimer.github.io/oppenheimer-blog
+url: http://localhost:4000
+#url: http://dgoppenheimer.github.io/oppenheimer-blog
 # when testing locally, use bundle exec jekyll serve --baseurl '' 
 baseurl: /oppenheimer-blog
 
@@ -50,10 +50,13 @@ google_analytics:   UA-68648785-2
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones 
 timezone:    America/New_York
 future:      true
-highlighter: pygments
-markdown:    redcarpet
-redcarpet: 
-  extensions: ["disable_indented_code_blocks", "fenced_code_blocks", "smart", "tables", "no_intra_emphasis", "autolink", "strikethrough", "superscript", "with_toc_data"]
+highlighter: rouge
+markdown:    kramdown
+kramdown:
+   input: GFM
+   auto_ids: true
+#redcarpet: 
+#  extensions: ["disable_indented_code_blocks", "fenced_code_blocks", "smart", "tables", "no_intra_emphasis", "autolink", "strikethrough", "superscript", "with_toc_data"]
 
 # Excerpt separater
 excerpt_separator: <!--more-->

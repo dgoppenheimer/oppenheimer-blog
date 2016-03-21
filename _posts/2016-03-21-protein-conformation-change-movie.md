@@ -8,13 +8,13 @@ image:
   feature: CaM-1136x640.jpg
   credit: D.G. Oppenheimer
 comments: true
-excerpt: When I teach protein structure in introductory biology, I like to show the dramatic shape changes that can occur when proteins bind ions. My protein of choice for these demonstrations is calmodulin, which undergoes a large conformational change upon binding calcium ions. I recently found the [Climber](https://simtk.org/home/climber) program, which can calculate the structural changes necessary to morph one protein conformation into another using the structure files from the [RCSB Protein Data Bank](http://www.rcsb.org/pdb/home/home.do). When combined with [PyMOL](https://www.pymol.org), the output looks absolutely stunning. 
+excerpt: When I teach protein structure in introductory biology, I like to show the dramatic shape changes that can occur when proteins bind ions. My protein of choice for these demonstrations is calmodulin, which undergoes a large conformational change upon binding calcium ions. I recently found the Climber program, which can calculate the structural changes necessary to morph one protein conformation into another using the structure files from the RCSB Protein Data Bank. When combined with PyMOL, the output looks absolutely stunning. 
 
 
 
 ---
 
-
+When I teach protein structure in introductory biology, I like to show the dramatic shape changes that can occur when proteins bind ions. My protein of choice for these demonstrations is calmodulin, which undergoes a large conformational change upon binding calcium ions. I recently found the [Climber](https://simtk.org/home/climber) program, which can calculate the structural changes necessary to morph one protein conformation into another using the structure files from the [RCSB Protein Data Bank](http://www.rcsb.org/pdb/home/home.do). When combined with [PyMOL](https://www.pymol.org), the output looks absolutely stunning. 
 
 What I like about the [Climber](https://simtk.org/home/climber) program is that it uses energy minimization in calculating the shape changes rather than only linear interpolation. Using energy minimization means that the resulting conformational change is likely to be closer to what really happens when the protein changes shape. Here is how I created a movie of calmodulin morphing from the "closed" state (without calcium ions) to the "open" state (with bound calcium ions). 
 

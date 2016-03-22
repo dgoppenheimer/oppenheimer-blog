@@ -16,6 +16,9 @@ excerpt: When I teach protein structure in introductory biology, I like to show 
 
 When I teach protein structure in introductory biology, I like to show the dramatic shape changes that can occur when proteins bind ions. My protein of choice for these demonstrations is calmodulin, which undergoes a large conformational change upon binding calcium ions. I recently found the [Climber](https://simtk.org/home/climber) program, which can calculate the structural changes necessary to morph one protein conformation into another using the structure files from the [RCSB Protein Data Bank](http://www.rcsb.org/pdb/home/home.do). When combined with [PyMOL](https://www.pymol.org), the output looks absolutely stunning. 
 
+<iframe src="https://player.vimeo.com/video/159895118?loop=1&byline=0" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<p><a href="https://vimeo.com/159895118">CaM-conf-vimeo1</a> from <a href="https://vimeo.com/user30910406">David Oppenheimer</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 What I like about the [Climber](https://simtk.org/home/climber) program is that it uses energy minimization in calculating the shape changes rather than only linear interpolation. Using energy minimization means that the resulting conformational change is likely to be closer to what really happens when the protein changes shape. Here is how I created a movie of calmodulin morphing from the "closed" state (without calcium ions) to the "open" state (with bound calcium ions). 
 
 ## Get two PDB files to morph ##
@@ -211,7 +214,7 @@ ffmpeg
   -s:v 640x640      # video size
   -c:v libx264      # encoder
   -profile:v main   # H.264 profile for video
-  -crf 12           # constant rate factor (0 to 23, 0 is lossless)
+  -crf 12           # constant rate factor (0 to 51, 0 is lossless)
   -pix_fmt yuv420p  # pixel format; changes the rgb from the pngs to yuv
   -preset veryslow  # encoding speed (slow but higher quality per file size)
   -tune stillimage  # tunes the encoding settings for images
@@ -225,6 +228,31 @@ Type the following on the command line.
     $ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 640x640 -c:v libx264 -profile:v main -crf 12 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 CaM-conf02.mp4
 
 **Success!** We have a movie that loops nicely. **Note:** I use VLC from the [VideoLAN website](http://www.videolan.org/vlc/download-macosx.html) as my movie player. 
+
+## Optimize the video for Vimeo ##
+
+```bash
+ffmpeg 
+  -framerate 30        # input frame rate
+  -i image%03d.png     # image names (image000.png, ..., image999.png)
+  -s:v 1280x720        # video size
+  -c:v libx264         # encoder
+  -crf 18              # constant rate factor (0 to 51, 0 is lossless)
+  -pix_fmt yuv420p     # pixel format; changes the rgb from the pngs to yuv
+  -preset veryslow     # encoding speed (slow but higher quality per file size)
+  -tune stillimage     # tunes the encoding settings for images
+  -r 30                # output frame rate
+  –movflags faststart  # moves the the moov atom to the beginning of the mp4 container
+  output_file.mp4   # movie file name
+```
+
+Start PyMOL, import session, change viewport to 1280x720, color and reposition protein, turn on ray tracing, set antialias to 2, make the movie, and export frames to png files.
+
+```bash
+$ cd  ~/pymol-work/1-pymol-movies/CaM-conf-vimeo
+$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 1280x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 CaM-conf-vimeo1.mp4
+```
+
 
 
 [^publication]: Weiss D.R., and M. Levitt. 2009. Can morphing methods predict intermediate structures. J Mol Biol. 385: 665-674. [full text of publication](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2691871/)

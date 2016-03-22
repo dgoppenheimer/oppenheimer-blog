@@ -194,13 +194,13 @@ The `mset` command tells PyMOL which states get included as frames of a movie. I
 
 The `set cache_frames=0` command tells PyMOL to not save each frame in memory. If the frame cache is turned on, a large amount of memory is used saving the images in RAM.
 
-The `mpng` command will write each frame of the movie to a separate file with the specified prefix, in this case, `mov`. 
+The `mpng` command will write each frame of the movie to a separate file with the specified prefix, in this case, `CaM-conf-mov`. 
 
 To test the movie, turn off ray tracing of frames: paste `set ray_trace_frames=0` into the PyMOL command line. When you are ready to create the frames of the movie, turn ray tracing back on: `set ray_trace_frames=1`.
 
 **Note:** Since I don't pay for a PyMOL subscription, I have to compile the code myself. The open source version of PyMOL does not have the movie creating commands, so I have to create `png` files for each frame, and then put them together using other software.
 
-## Make the move from the `.png` files ##
+## Make the move from the .png files ##
 
 I have previously installed the free command line video tool, [FFMPEG](http://www.ffmpeg.org). There is definitely a learning curve when using ffmpeg, but luckily, there are lots of tutorials on the web for your learning enjoyment. Here are the options I used to make the movie at the start of this post. I got the explanations from the [Joy of Data blog](http://www.joyofdata.de/blog/hd-clips-with-ffmpeg-for-youtube-and-vimeo/) and the ffmpeg manual. 
 

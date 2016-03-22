@@ -200,7 +200,7 @@ To test the movie, turn off ray tracing of frames: paste `set ray_trace_frames=0
 
 **Note:** Since I don't pay for a PyMOL subscription, I have to compile the code myself. The open source version of PyMOL does not have the movie creating commands, so I have to create `png` files for each frame, and then put them together using other software.
 
-## Make the move from the .png files ##
+## Make the movie from the .png files ##
 
 I have previously installed the free command line video tool, [FFMPEG](http://www.ffmpeg.org). There is definitely a learning curve when using ffmpeg, but luckily, there are lots of tutorials on the web for your learning enjoyment. Here are the options I used to make the movie at the start of this post. I got the explanations from the [Joy of Data blog](http://www.joyofdata.de/blog/hd-clips-with-ffmpeg-for-youtube-and-vimeo/) and the ffmpeg manual. 
 

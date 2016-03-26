@@ -227,7 +227,7 @@ Type the following on the command line.
     $ cd ~/pymol-work/1-pymol-movies/CaM-conformation
     $ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 640x640 -c:v libx264 -profile:v main -crf 12 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 CaM-conf02.mp4
 
-**Success!** We have a movie that loops nicely. **Note:** I use VLC from the [VideoLAN website](http://www.videolan.org/vlc/download-macosx.html) as my movie player. 
+**Success!** We have a movie that loops nicely, and that I can post to Instagram. **Note:** To view the movie, I use VLC from the [VideoLAN website](http://www.videolan.org/vlc/download-macosx.html) as my movie player. 
 
 ## Optimize the video for Vimeo ##
 
@@ -246,11 +246,11 @@ ffmpeg
   output_file.mp4   # movie file name
 ```
 
-Start PyMOL, import session, change viewport to 1280x720, color and reposition protein, turn on ray tracing, set antialias to 2, make the movie, and export frames to png files.
+To post on the Cell Bones website, I want to optimize the video for Vimeo. Mainly this means changing the image dimensions and moving the moov atom. I also used a higher antialias value in PyMOL so that the images look sharper. So, briefly, start PyMOL, import session, change viewport to 1280x720, color and reposition protein, turn on ray tracing, set antialias to 2, make the movie, and export frames to png files.
 
 ```bash
 $ cd  ~/pymol-work/1-pymol-movies/CaM-conf-vimeo
-$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 1280x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 CaM-conf-vimeo1.mp4
+$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 1280x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 –movflags faststart CaM-conf-vimeo1.mp4
 ```
 
 

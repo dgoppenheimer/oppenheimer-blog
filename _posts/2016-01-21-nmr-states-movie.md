@@ -2,7 +2,7 @@
 layout: post
 title: Displaying Protein NMR States as a Movie
 description: "How to simulate protein dynamics using MovieMaker and PyMOL"
-modified:
+modified: 2016-03-25
 tags: [PyMOL, MovieMaker, video, protein dynamics]
 image:
   feature: hcofilin-1136x640.jpg
@@ -88,6 +88,47 @@ Open Terminal and move into the directory that contains all the png images gener
 This method works well to generate movies showing the NMR states of a protein. It is not exactly the same as a molecular dynamics simulation, but it does show a reasonable approximation for how proteins may move in solution. My students like these movies when I show them in lectures on protein structure. 
 
 Happy coding!
+
+## Update: Optimize the movie for Vimeo
+
+To optimize the movie for Vimeo, I did the following:
+
+1. Loaded the trajectory from MovieMaker in PyMOL
+
+    ```python
+    > cd ~/pymol-work/1-pymol-movies/pdb-directories/1q8g-hcofilin-pdb
+    > for idx in range(0,95):cmd.load("1qhg%d.pdb"%idx,"mov")
+    ```
+
+2. Commented out the `mset` command in the `@nmr-states.txt` script
+3. Ran `@nmr-states.txt` script
+4. Ran the following commands to make the movie frames
+
+    ```python
+    > mclear 
+    > mset 1 -95 -2 
+    > set cache_frames=0
+    > set ray_trace_frames=1
+    > cd ~/pymol-work/1-pymol-movies/1qhg-nmr-states
+    > mpng 1qhg-mov
+    ```
+
+The `mclear` command tells PyMOL to remove any saved frames from the cache. 
+
+The `mset` command tells PyMOL which states get included as frames of a movie. In our case, frames 1, 2, 3, ..., 94, 95, then 94, 93, ..., 4, 3, 2. Stopping at state 2 allows smooth motion when we loop the resulting exported movie.
+
+The `set cache_frames=0` command tells PyMOL to not save each frame in memory. If the frame cache is turned on, a large amount of memory is used saving the images in RAM.
+
+The `mpng` command will write each frame of the movie to a separate file with the specified prefix, in this case, `1qhg-mov`. 
+
+To test the movie, turn off ray tracing of frames: paste `set ray_trace_frames=0` into the PyMOL command line. When you are ready to create the frames of the movie, turn ray tracing back on: `set ray_trace_frames=1`.
+
+Once I had all the `.png` files, I used the following `ffmpeg` settings to make the movie.
+
+```bash
+$ cd  ~/pymol-work/1-pymol-movies/1qhg-nmr-states
+$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 720x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 –movflags faststart 1qhg-nmr-states.mp4
+```
 
 ### nmr-states.txt
 

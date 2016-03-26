@@ -94,25 +94,25 @@ Happy coding!
 
 To optimize the movie for Vimeo, I did the following:
 
-1. Loaded the trajectory from MovieMaker in PyMOL
+Loaded the trajectory from MovieMaker in PyMOL
 
-    ```python
-    > cd ~/pymol-work/1-pymol-movies/pdb-directories/1q8g-hcofilin-pdb
-    > for idx in range(0,95):cmd.load("1qhg%d.pdb"%idx,"mov")
-    ```
+```python
+> cd ~/pymol-work/1-pymol-movies/pdb-directories/1q8g-hcofilin-pdb
+> for idx in range(0,95):cmd.load("1qhg%d.pdb"%idx,"mov")
+```
 
-2. Commented out the `mset` command in the `@nmr-states.txt` script
-3. Ran `@nmr-states.txt` script
-4. Ran the following commands to make the movie frames
+Commented out the `mset` command in the `@nmr-states.txt` script   
+Ran `@nmr-states.txt` script   
+Ran the following commands to make the movie frames
 
-    ```python
-    > mclear 
-    > mset 1 -95 -2 
-    > set cache_frames=0
-    > set ray_trace_frames=1
-    > cd ~/pymol-work/1-pymol-movies/1qhg-nmr-states
-    > mpng 1qhg-mov
-    ```
+```python
+> mclear 
+> mset 1 -95 -2 
+> set cache_frames=0
+> set ray_trace_frames=1
+> cd ~/pymol-work/1-pymol-movies/1qhg-nmr-states
+> mpng 1qhg-mov
+```
 
 The `mclear` command tells PyMOL to remove any saved frames from the cache. 
 

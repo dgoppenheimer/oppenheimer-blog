@@ -11,7 +11,8 @@ comments: true
 excerpt: When I teach introductory biology, I like to demonstrate how proteins are not rigid structures. However, I have have no experience conducting molecular dynamics simulations. I found that I could simulate a simulation by morphing between the different states of a protein structure that was determined by NMR. Here is how I did it. 
 ---
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vNfjiZ_weTg?rel=0" frameborder="0" allowfullscreen> </iframe>
+<iframe src="https://player.vimeo.com/video/160424957?loop=1&portrait=0" width="720" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<p><a href="https://vimeo.com/160424957">1qhg-nmr-states</a> from <a href="https://vimeo.com/user30910406">David Oppenheimer</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 When I teach introductory biology, I like to demonstrate how proteins are not rigid structures but are quite dynamic. However, showing this is not trivial. The best way to do this would be to carry out molecular dynamics computer simulations using a known protein structure. Molecular dynamics simulation software is not easy to use, and can take a long time to run depending on the computer hardware available. An alternative is to simulate true molecular dynamics by morphing between the different states of a protein structure that was determined by nuclear magnetic resonance (NMR). 
 
@@ -127,7 +128,7 @@ Once I had all the `.png` files, I used the following `ffmpeg` settings to make 
 
 ```bash
 $ cd  ~/pymol-work/1-pymol-movies/1qhg-nmr-states
-$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 720x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 –movflags faststart 1qhg-nmr-states.mp4
+$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 720x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 1qhg-nmr-states.mp4
 ```
 
 ### nmr-states.txt

@@ -242,15 +242,14 @@ ffmpeg
   -preset veryslow     # encoding speed (slow but higher quality per file size)
   -tune stillimage     # tunes the encoding settings for images
   -r 30                # output frame rate
-  –movflags faststart  # moves the the moov atom to the beginning of the mp4 container
-  output_file.mp4   # movie file name
+  output_file.mp4      # movie file name
 ```
 
 To post on the Cell Bones website, I want to optimize the video for Vimeo. Mainly this means changing the image dimensions and moving the moov atom. I also used a higher antialias value in PyMOL so that the images look sharper. So, briefly, start PyMOL, import session, change viewport to 1280x720, color and reposition protein, turn on ray tracing, set antialias to 2, make the movie, and export frames to png files.
 
 ```bash
 $ cd  ~/pymol-work/1-pymol-movies/CaM-conf-vimeo
-$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 1280x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 –movflags faststart CaM-conf-vimeo1.mp4
+$ ffmpeg -framerate 30 -pattern_type glob -i '*.png' -s:v 1280x720 -c:v libx264 -crf 18 -tune stillimage -pix_fmt yuv420p -preset veryslow -r 30 CaM-conf-vimeo1.mp4
 ```
 
 

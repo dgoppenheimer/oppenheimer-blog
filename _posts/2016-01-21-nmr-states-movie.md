@@ -11,7 +11,7 @@ comments: true
 excerpt: When I teach introductory biology, I like to demonstrate how proteins are not rigid structures. However, I have have no experience conducting molecular dynamics simulations. I found that I could simulate a simulation by morphing between the different states of a protein structure that was determined by NMR. Here is how I did it. 
 ---
 
-<iframe src="https://player.vimeo.com/video/160424957?loop=1&portrait=0" width="720" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe src="https://player.vimeo.com/video/160424957?loop=1&portrait=0" width="360" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 <p><a href="https://vimeo.com/160424957">1qhg-nmr-states</a> from <a href="https://vimeo.com/user30910406">David Oppenheimer</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 When I teach introductory biology, I like to demonstrate how proteins are not rigid structures but are quite dynamic. However, showing this is not trivial. The best way to do this would be to carry out molecular dynamics computer simulations using a known protein structure. Molecular dynamics simulation software is not easy to use, and can take a long time to run depending on the computer hardware available. An alternative is to simulate true molecular dynamics by morphing between the different states of a protein structure that was determined by nuclear magnetic resonance (NMR). 

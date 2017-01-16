@@ -14,7 +14,7 @@ excerpt: I read an interesting article in Science about a molecular knot. I deci
 
 
 
-<iframe src="https://player.vimeo.com/video/199729999#loop=1&portrait=0" width="640" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe src="https://player.vimeo.com/video/199729999?loop=1&portrait=0" width="640" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 <p><a href="https://vimeo.com/199729999">molecular knot</a> from <a href="https://vimeo.com/user30910406">David Oppenheimer</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 I read an interesting article about the design and synthesis of a molecular knot in *Science* by Danon *et al.*[^footnote], and I thought I would try to play around with the molecule in the molecular structure manipulation program [PyMol](https://www.pymol.org). Here's how I made the movie shown at the beginning of this post.

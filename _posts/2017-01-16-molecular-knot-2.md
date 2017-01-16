@@ -5,7 +5,7 @@ description: "How to make a molecular knot movie using PyMOL"
 modified: 2017-01-16
 tags: [PyMOL, video, movie, molecule]
 image:
-  feature: molecular-knot-2-1136x640.jpg
+  feature: molecular-knot-1136x640.jpg
   credit: D.G. Oppenheimer
 comments: true
 excerpt: I read an interesting article in Science about a molecular knot. I decided to download the structure file and play with it in PyMOL. Here's what I did with it.  
